@@ -42,6 +42,6 @@
   ([port]
     (let [site (-> (site #'routes)
                    response-headers)]
-      (run-server site {:port port})))
+      (run-server site {:port (Integer/parseInt port)})))
   ([]
     (start (env :server-port 8080))))

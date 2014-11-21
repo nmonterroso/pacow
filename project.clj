@@ -10,7 +10,8 @@
                  [org.clojure/data.json "0.2.5"]
                  [ring "1.3.0"]]
   :profiles  {:dev  {:source-paths  ["dev"]}}
-  :main pachow.core
+  :main pacow.core
+  :aot [pacow.core]
   :repl-options {:init-ns user}
   :uberjar-name "pacow-standalone.jar"
   :jvm-opts ["-server"])

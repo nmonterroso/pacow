@@ -1,5 +1,6 @@
 (ns pacow.core
-  (:require [pacow.server :as server]))
+  (:require [pacow.server :as server])
+  (:gen-class))
 
-(defn -main [&args]
+(defn -main [& args]
   (server/start))
