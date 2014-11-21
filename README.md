@@ -1,14 +1,13 @@
 # pacow
 
-A Clojure library designed to ... well, that part is up to you.
+Slack/[pachow](http://pachow.me)/[cowsay](http://en.wikipedia.org/wiki/Cowsay) integration
 
 ## Usage
 
-FIXME
+clojure
 
-## License
+## Environment Variables
 
-Copyright © 2014 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+ * `COWSAY_BIN`               location of cowsay binary on local system (defaults to `cowsay`)
+ * `SERVER_PORT`              port to listen on (defaults to `8080`)
+ * `SLACK_ENDPOINT`           slack integration endpoint (incoming webhook)
