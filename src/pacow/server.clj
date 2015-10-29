@@ -44,4 +44,4 @@
                    response-headers)]
       (run-server site {:port (Integer/parseInt port)})))
   ([]
-    (start (env :server-port 8080))))
+    (start (env :server-port "8080"))))
