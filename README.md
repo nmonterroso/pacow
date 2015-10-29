@@ -13,11 +13,11 @@ lein uberjar
 
 ### Run
 ```
-env COWSAY_BIN='/path/to/cowsay'
-env SERVER_PORT='<port-number>'
-env SLACK_ENDPOINT='<slack-endpoint>'
+export COWSAY_BIN='/path/to/cowsay'
+export SERVER_PORT='<port-number>'
+export SLACK_ENDPOINT='<slack-endpoint>'
 
-exec java -jar pacow-standalone.jar
+java -jar pacow-standalone.jar
 ```
 
 ## Environment Variables
