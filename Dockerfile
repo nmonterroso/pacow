@@ -1,3 +1,11 @@
+# Build docker file:
+# docker build -t pacow-image .
+
+
+# Run docker container
+# docker run -d -p 8081:8081 --env SLACK_ENDPOINT='<YOUR_SLACK_ENDPOINT>' --name pacow-container pacow-image
+
+
 FROM java:jre
 
 MAINTAINER Swaraj <swarajban@gmail.com>
@@ -25,7 +33,6 @@ RUN ["lein", "uberjar"]
 # Environment variables
 ENV COWSAY_BIN '/usr/games/cowsay'
 ENV SERVER_PORT '8081'
-ENV SLACK_ENDPOINT 'https://hooks.slack.com/services/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'
 
 # Expose server over port 8081
 EXPOSE 8081
