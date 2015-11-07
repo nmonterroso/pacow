@@ -13,9 +13,9 @@ lein uberjar
 
 ### Run
 ```
-export COWSAY_BIN='/path/to/cowsay'
-export SERVER_PORT='<port-number>'
-export SLACK_ENDPOINT='<slack-endpoint>'
+export COWSAY_BIN=/path/to/cowsay
+export SERVER_PORT=<port-number>
+export SLACK_ENDPOINT=<slack-endpoint>
 
 java -jar pacow-standalone.jar
 ```
