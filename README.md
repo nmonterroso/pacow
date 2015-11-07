@@ -25,3 +25,14 @@ java -jar pacow-standalone.jar
  * `COWSAY_BIN`               location of cowsay binary on local system (defaults to `cowsay`)
  * `SERVER_PORT`              port to listen on (defaults to `8080`)
  * `SLACK_ENDPOINT`           slack integration endpoint (incoming webhook)
+
+## Docker
+To build the docker file:
+```
+docker build -t pacow-image .
+```
+
+To run the container:
+```
+docker run -d -p 8081:8081 --env SLACK_ENDPOINT='<YOUR_SLACK_ENDPOINT>' --name pacow-container pacow-image
+```
