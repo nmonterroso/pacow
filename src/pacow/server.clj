@@ -31,7 +31,7 @@
            (POST "/slack/cowsay" request
                  (let [post-params (form-params->params (:form-params request))
                        message (:text post-params)]
-                   (slack/message (cowsay/moo message) post-params))
+                   (slack/message (cowsay/handle-cowsay message) post-params))
                  empty-response)
            (POST "/slack/pachow" request
                  (let [post-params (form-params->params (:form-params request))]
