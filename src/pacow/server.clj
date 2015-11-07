@@ -26,12 +26,12 @@
 (defroutes routes
            (POST "/slack/pacow" request
                  (let [post-params (form-params->params (:form-params request))]
-                   (slack/message (cowsay/moo (pachow/generate)) post-params))
+                   (slack/message (cowsay/moo (pachow/generate)) post-params true))
                  empty-response)
            (POST "/slack/cowsay" request
                  (let [post-params (form-params->params (:form-params request))
                        message (:text post-params)]
-                   (slack/message (cowsay/handle-cowsay message) post-params))
+                   (slack/message (cowsay/handle-cowsay message) post-params true))
                  empty-response)
            (POST "/slack/pachow" request
                  (let [post-params (form-params->params (:form-params request))]

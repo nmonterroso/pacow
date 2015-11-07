@@ -4,9 +4,6 @@
 
 (def cowsay (env :cowsay-bin "cowsay"))
 
-(defn slack-out [text]
-  (str "```" text "```"))
-
 (defn animalsay [animal message]
   (:out (sh cowsay "-f" animal message)))
 
@@ -14,10 +11,10 @@
   (:out (sh cowsay message)))
 
 (defn handle-cowsay [text]
-  (let [[_ animal message] (re-find #"^\-f (.*?) (.*)" text)]
+  (let [[_ animal message] (re-find #"^\-animal (.*?) (.*)" text)]
     (if animal
-      (slack-out (animalsay animal message))
-      (slack-out (moo text))
+      (animalsay animal message)
+      (moo text)
     )
   )
 )
