@@ -5,9 +5,15 @@
 
 (def endpoint (env :slack-endpoint))
 
-(defn message [m post-params]
-  (let [payload (json/write-str {:text m
-                                 :channel (str "#" (:channel_name post-params))
-                                 :username "cowsay"
-                                 :icon_emoji ":cow:"})]
-    (http/post endpoint {:form-params {:payload payload}})))
+(defn block-text [text]
+  (str "```" text "```"))
+
+(defn message
+  ([m post-params] (message m post-params false))
+  ([m post-params block-text?]
+   (let [payload (json/write-str {:text (if block-text? (block-text m) m)
+                                  :channel (str "#" (:channel_name post-params))
+                                  :username "cowsay"
+                                  :icon_emoji ":cow:"})]
+     (http/post endpoint {:form-params {:payload payload}}))))
+
